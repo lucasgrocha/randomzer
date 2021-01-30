@@ -29,3 +29,25 @@
 #input-field button:active {
   background-color: rgb(50, 163, 40);
 }
+
+#words-container {
+  width: 100%;
+}
+
+#words-list {
+  margin-top: 4rem;
+  color: white;
+  width: inherit;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#words-list span {
+  display: inline;
+  padding: .2rem;
+  font-size: 2rem;
+}
+
+#words-list span:not(:last-child)::after {
+  content: ',';
+}

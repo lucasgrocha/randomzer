@@ -35,11 +35,13 @@ const Home: React.FC = () => {
         <button onClick={appendWord}>+</button>
       </div>
 
-      <ul>
-        {words.map((word, id) => (
-          <li key={id}>{word}</li>
-        ))}
-      </ul>
+      <div id="words-container">
+        <div id="words-list">
+          {words.map((word, id) => (
+            <span key={id}>{word}</span>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
