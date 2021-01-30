@@ -1,0 +1,66 @@
+:root {
+  font-size: 60%;
+
+  --color-background: rgb(228, 228, 228);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100vh;
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+body,
+input,
+button,
+textarea {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 90vw;
+  margin-top: 8rem;
+  max-width: 1200px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #acacac;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b8b8b;
+}
+
+@media screen and (min-width: 700px) {
+  :root {
+    font-size: 62.5%;
+  }
+}
