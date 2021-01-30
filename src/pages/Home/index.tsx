@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import Word from '../../components/Word';
 import './styles.css';
 
 const Home: React.FC = () => {
@@ -38,7 +39,7 @@ const Home: React.FC = () => {
       <div id="words-container">
         <div id="words-list">
           {words.map((word, id) => (
-            <span key={id}>{word}</span>
+            <Word word={word} key={id} />
           ))}
         </div>
       </div>
