@@ -1,0 +1,32 @@
+#word-input {
+  background-color: rgb(24, 27, 46);
+  border: none;
+  font-size: 3.2rem;
+  outline: none;
+  padding: 0.4rem;
+  color: rgb(221, 219, 219);
+  width: 95%;
+}
+
+#input-field {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+
+#input-field button {
+  width: 5%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(59, 197, 47);
+  color: rgb(221, 219, 219);
+  font-size: 2rem;
+}
+
+#input-field button:active {
+  background-color: rgb(50, 163, 40);
+}
