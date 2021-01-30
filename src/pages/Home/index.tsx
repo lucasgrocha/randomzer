@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import '../../assets/styles/global.css';
 import './styles.css';
 
 const Home: React.FC = () => {
@@ -36,11 +35,11 @@ const Home: React.FC = () => {
         <button onClick={appendWord}>+</button>
       </div>
 
-      {words.map((word, id) => (
-        <ul key={id}>
-          <li>{word}</li>
-        </ul>
-      ))}
+      <ul>
+        {words.map((word, id) => (
+          <li key={id}>{word}</li>
+        ))}
+      </ul>
     </div>
   );
 };
