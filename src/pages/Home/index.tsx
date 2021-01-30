@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
+import Roulette from '../../components/Roulette';
 import Word from '../../components/Word';
 import './styles.css';
 
 const Home: React.FC = () => {
-  const [words, setWords] = useState<string[]>([]);
+  const [words, setWords] = useState<string[]>(['1', '2', '3', '4']);
   const [word, setWord] = useState<string>('');
+  const [spin, setSpin] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   function handleKeyPress(evt: React.KeyboardEvent) {
@@ -21,8 +23,9 @@ const Home: React.FC = () => {
     }
   }
 
-  return (
+  const main = (
     <div className="container">
+      <button onClick={_ => setSpin(true)}>Spin</button>
       <div id="input-field">
         <input
           type="text"
@@ -44,6 +47,10 @@ const Home: React.FC = () => {
         </div>
       </div>
     </div>
+  )
+
+  return (
+    spin ? <Roulette words={words} /> : main
   );
 };
 
