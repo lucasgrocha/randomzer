@@ -1,20 +1,24 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import '../../assets/styles/global.css';
 import './styles.css';
 
 const Home: React.FC = () => {
   const [words, setWords] = useState<string[]>([]);
   const [word, setWord] = useState<string>('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
   function handleKeyPress(evt: React.KeyboardEvent) {
-    if (evt.key === 'Enter' && word.length) {
-      appendWord()
+    if (evt.key === 'Enter') {
+      appendWord();
     }
   }
 
   function appendWord() {
-    setWords((prev) => [...prev, word]);
-    setWord('');
+    if (word.length) {
+      setWords((prev) => [...prev, word]);
+      setWord('');
+      inputRef.current?.focus();
+    }
   }
 
   return (
@@ -26,9 +30,17 @@ const Home: React.FC = () => {
           value={word}
           onChange={(e) => setWord(e.target.value)}
           onKeyPress={handleKeyPress}
+          ref={inputRef}
+          autoComplete="off"
         />
         <button onClick={appendWord}>+</button>
       </div>
+
+      {words.map((word, id) => (
+        <ul key={id}>
+          <li>{word}</li>
+        </ul>
+      ))}
     </div>
   );
 };
